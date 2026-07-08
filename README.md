@@ -2,7 +2,7 @@
 
 Ask questions about financial documents using a **local LLM**, your data never
 leaves your computer. This repo is built with more than a decade of
-H&M Group's public filings** (annual reports, AGM/EGM documents, governance and
+H&M Group's public filings (annual reports, AGM/EGM documents, governance and
 sustainability reports), so you can clone it and ask questions in minutes.
 
 Every answer comes with **citations**: the source document, section, year, and a
@@ -62,7 +62,7 @@ Then open **http://localhost:8080/FinancialRAG.html** in your browser.
 
 **5. Ask questions:**
 
-- *"What was the total H&M Group revenue in 2025?*
+- *"What was the total H&M Group revenue in 2025?"*
 - *"Who was elected to the board at the 2025 AGM?"*
 - *"What dividend did the board propose in 2019?"*
 
@@ -73,6 +73,10 @@ curl -s -X POST http://localhost:8000/chat \
   -H "Content-Type: application/json" \
   -d '{"query":"What was the total H&M Group revenue in 2025?"}'
 ```
+
+> ⚠️ **Known issue (fix in progress):** the model sometimes fails to invoke the
+> search tool on the first attempt — if an answer comes back without sources,
+> retry the question a couple of times.
 
 ---
 
